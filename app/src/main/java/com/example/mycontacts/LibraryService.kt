@@ -1,7 +1,7 @@
 package com.example.mycontacts
 
 class LibraryService {
-    private val context = mutableListOf<Book>();
+    private val context = mutableListOf<Book>()
 
     fun getFormatBookInfoMessage(book: Book): String {
         return """
@@ -13,11 +13,11 @@ class LibraryService {
     }
 
     fun list(): List<Book> {
-        return context;
+        return context
     }
 
     fun addNew(name: String, author: String, year: Int){
-        context.add(Book(name, author, year));
+        context.add(Book(name, author, year))
     }
 
     fun search(keyword: String): List<Book> {

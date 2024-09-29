@@ -1,6 +1,6 @@
 package com.example.mycontacts
 
-val service: LibraryService = LibraryService();
+val service: LibraryService = LibraryService()
 
 fun main() {
     while (true) {
@@ -35,23 +35,23 @@ fun createNew() {
     println("Year of publishing:")
     val type = readln()
 
-    service.addNew(name, lastName, type.toInt());
+    service.addNew(name, lastName, type.toInt())
 }
 
 fun listItems() {
     for (book in service.list()){
-        println(service.getFormatBookInfoMessage(book));
+        println(service.getFormatBookInfoMessage(book))
     }
 }
 
 fun search() {
     println("Enter the search keyword (Name of book or author)")
-    val books = service.search(readln());
+    val books = service.search(readln())
     if (books.isEmpty()) {
-        println("The result not found!");
-        return;
+        println("The result not found!")
+        return
     }
     for (book in books) {
-        println(service.getFormatBookInfoMessage(book));
+        println(service.getFormatBookInfoMessage(book))
     }
 }
