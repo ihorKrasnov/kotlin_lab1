@@ -39,7 +39,12 @@ fun createNew() {
 }
 
 fun listItems() {
-    for (book in service.list()){
+    val books = service.list()
+    if (books.isEmpty()) {
+        println("The book list is empty; type command 'new' to register new book")
+        return
+    }
+    for (book in books){
         println(service.getFormatBookInfoMessage(book))
     }
 }
